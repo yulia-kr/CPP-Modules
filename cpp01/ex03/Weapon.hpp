@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:58:28 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/26 15:40:46 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/02/28 17:03:52 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ class Weapon{
 	void setType(std::string newType){
 		type = newType;
 	};
-	const std::string& getType(void) const{
-		const std::string& refType = this->type;
-		return(refType);
+	const std::string& getType(void) const{;
+		return(type);
 	};
 
 	private:

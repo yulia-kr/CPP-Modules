@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:58:44 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/26 18:20:43 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/02/28 09:00:57 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class HumanA{
 	void setWeapon(Weapon weapon);
 
 	private:
-	std::string name_;
-	Weapon& weapon_;
+	std::string name;
+	Weapon& weapon;
 };
 
 #endif

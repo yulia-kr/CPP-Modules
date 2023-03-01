@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:40:02 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/26 18:17:00 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/02/28 08:50:53 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ void PhoneBook::search()
 	{
 		if (!line.compare("CANCEL"))
 			break;
-		if (line.length() == 1 && std::isdigit(line[0]) && std::stoi(line) > 0 && std::stoi(line) < 9)
+		if (line.length() == 1 && std::isdigit(line[0]) && std::atoi(line.c_str()) > 0 && std::atoi(line.c_str()) < 9)
 		{
-			if (this->contact[std::stoi(line) - 1].getIndex())
+			if (this->contact[std::atoi(line.c_str()) - 1].getIndex())
 			{
-				this->contact[std::stoi(line) - 1].displayContacts();
+				this->contact[std::atoi(line.c_str()) - 1].displayContacts();
 				break;
 			} ///////////dont use
 		}

@@ -6,13 +6,13 @@
 #    By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/26 13:43:35 by ykruhlyk          #+#    #+#              #
-#    Updated: 2023/02/28 16:49:33 by ykruhlyk         ###   ########.fr        #
+#    Updated: 2023/02/28 16:46:52 by ykruhlyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = weapon
+NAME = zombie
 
-SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRC = main.cpp
 
 CC = c++
 
