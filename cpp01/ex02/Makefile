@@ -6,7 +6,7 @@
 #    By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/26 13:43:35 by ykruhlyk          #+#    #+#              #
-#    Updated: 2023/02/26 13:45:33 by ykruhlyk         ###   ########.fr        #
+#    Updated: 2023/03/02 10:54:02 by ykruhlyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp
 
 CC = c++
 
-RM = RM
+RM = rm -rf
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

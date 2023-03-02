@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:59:32 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/28 09:03:33 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/03/02 08:48:30 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ HumanB::HumanB(std::string name) : name(name), weapon(NULL)
 }
 
 HumanB::~HumanB(void){
-	std::cout << this->name << " isn't a HumanB anymore" << std::endl;
+	std::cout << this->name << " HumanB destroyed" << std::endl;
 }
 
 void HumanB::attack(void){

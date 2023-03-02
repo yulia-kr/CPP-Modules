@@ -6,7 +6,7 @@
 #    By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 09:58:26 by ykruhlyk          #+#    #+#              #
-#    Updated: 2023/02/25 10:36:15 by ykruhlyk         ###   ########.fr        #
+#    Updated: 2023/03/02 10:53:30 by ykruhlyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp randomChump.cpp newZombie.cpp Zombie.cpp
 
 CC = c++
 
-RM = RM
+RM = rm -rf
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 10:30:03 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/23 13:50:15 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/02/28 08:47:21 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 			phone.add();
 		if (!line.compare("SEARCH"))
 			phone.search();
-		std::cout << "ENTER ADD, SEARCH OR CANCEL" << std::endl; 
+		std::cout << "ENTER ADD, SEARCH OR EXIT" << std::endl; 
 	}
 	return 0;
 }

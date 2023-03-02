@@ -6,7 +6,7 @@
 #    By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 09:40:05 by ykruhlyk          #+#    #+#              #
-#    Updated: 2023/02/23 10:51:07 by ykruhlyk         ###   ########.fr        #
+#    Updated: 2023/03/02 10:52:57 by ykruhlyk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.cpp phonebook.cpp contacts.cpp
 
 CC = c++
 
-RM = RM
+RM = rm -rf
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 

@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 13:58:44 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/28 09:02:54 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/03/02 09:17:03 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "Weapon.hpp"
 
-class HumanB{
+class HumanB {
 	public:
 	HumanB(std::string name);
 	~HumanB();

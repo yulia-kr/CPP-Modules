@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:40:02 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/02/28 08:50:53 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/03/02 09:11:32 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void PhoneBook::search()
 			{
 				this->contact[std::atoi(line.c_str()) - 1].displayContacts();
 				break;
-			} ///////////dont use
+			}
 		}
 		std::cout << "WRONG INDEX. TRY AGAIN OR CANCEL" << std::endl;
 	}
