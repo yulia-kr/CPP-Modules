@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:15:34 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/03/02 10:44:11 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/03/17 08:13:10 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ void Harl::complain( std::string level)
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i = 0;
 	
-	while (i < 4 && levels[i].compare(level))
+	while (i < 4)
+	{	
+		if (levels[i] == level)
+			break;
 		i++;
+	}
 	switch (i)
 	{
 		case 0:

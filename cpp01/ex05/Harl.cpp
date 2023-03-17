@@ -6,7 +6,7 @@
 /*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:15:34 by ykruhlyk          #+#    #+#             */
-/*   Updated: 2023/03/02 10:23:30 by ykruhlyk         ###   ########.fr       */
+/*   Updated: 2023/03/16 09:51:38 by ykruhlyk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,14 @@ void Harl::complain( std::string level)
 	void (Harl::*fptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	int i = 0;
 	
-	while (i < 4 && levels[i].compare(level))
+	while (i < 4)
+	{	
+		if (levels[i] == level)
+		{	
+			(this->*fptr[i])();
+			return;
+		}
 		i++;
-	if (i < 4)
-		(this->*fptr[i])();
-	else
-		std::cout << " INVALID LEVEL:" << std::endl;
+	}
+	std::cout << " INVALID LEVEL:" << std::endl;
 }
