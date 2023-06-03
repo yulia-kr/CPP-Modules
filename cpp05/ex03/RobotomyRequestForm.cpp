@@ -19,7 +19,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
     std::cout << "RobotomyRequestForm     destructor was called" << std::endl;
 }
 
-RobotomyRequestForm RobotomyRequestForm::operator=(const RobotomyRequestForm &rrf) {
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rrf) {
     if (this != &rrf) {
         this->target = rrf.target;
         this->setIsSigned(this->GetIsSigned());

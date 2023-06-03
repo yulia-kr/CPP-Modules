@@ -19,7 +19,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm     destructor was called" << std::endl;
 }
 
-ShrubberyCreationForm ShrubberyCreationForm::operator=(const ShrubberyCreationForm &scf) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &scf) {
     if (this != &scf) {
         this->target = scf.target;
         this->setIsSigned(this->GetIsSigned());

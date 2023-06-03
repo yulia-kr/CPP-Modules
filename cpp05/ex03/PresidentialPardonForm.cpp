@@ -19,7 +19,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
     std::cout << "PresidentialPardonForm     destructor was called" << std::endl;
 }
 
-PresidentialPardonForm PresidentialPardonForm::operator=(const PresidentialPardonForm &ppf) {
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &ppf) {
     if (this != &ppf) {
         this->target = ppf.target;
         this->setIsSigned(this->GetIsSigned());
