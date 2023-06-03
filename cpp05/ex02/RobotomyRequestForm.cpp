@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:19 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:20 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm() 
@@ -19,7 +31,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {
     std::cout << "RobotomyRequestForm     destructor was called" << std::endl;
 }
 
-RobotomyRequestForm RobotomyRequestForm::operator=(const RobotomyRequestForm &rrf) {
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rrf) {
     if (this != &rrf) {
         this->target = rrf.target;
         this->setIsSigned(this->GetIsSigned());

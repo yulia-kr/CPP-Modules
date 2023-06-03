@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:27 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:28 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm() 
@@ -19,7 +31,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
     std::cout << "ShrubberyCreationForm     destructor was called" << std::endl;
 }
 
-ShrubberyCreationForm ShrubberyCreationForm::operator=(const ShrubberyCreationForm &scf) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &scf) {
     if (this != &scf) {
         this->target = scf.target;
         this->setIsSigned(this->GetIsSigned());

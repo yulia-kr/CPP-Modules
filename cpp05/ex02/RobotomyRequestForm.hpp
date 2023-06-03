@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:22 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:23 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
@@ -14,7 +26,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm();
 		RobotomyRequestForm(std::string param_target);
 		RobotomyRequestForm(const RobotomyRequestForm &rrf);
-		RobotomyRequestForm operator=(const RobotomyRequestForm &rrf);
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &rrf);
 		~RobotomyRequestForm();
 
 		std::string getTarget(void) const;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:40:04 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:40:05 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AForm.hpp"
 
 AForm::AForm() : name("AForm"), grade_to_sign(1), grade_to_execute(1), isSigned(false){
@@ -14,7 +26,7 @@ AForm::AForm(std::string param_name, int param_grade_to_sign, int param_grade_to
 
         if(grade_to_sign < MAX_GRADE || grade_to_execute < MAX_GRADE)
             throw AForm::GradeTooHighException();
-        else if (grade_to_sign > MIN_GRADE || grade_to_execute > MIN_GRADE)
+        if (grade_to_sign > MIN_GRADE || grade_to_execute > MIN_GRADE)
             throw AForm::GradeTooLowException();
 }
 

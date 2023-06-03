@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:11 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:12 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() 
@@ -19,7 +31,7 @@ PresidentialPardonForm::~PresidentialPardonForm() {
     std::cout << "PresidentialPardonForm     destructor was called" << std::endl;
 }
 
-PresidentialPardonForm PresidentialPardonForm::operator=(const PresidentialPardonForm &ppf) {
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &ppf) {
     if (this != &ppf) {
         this->target = ppf.target;
         this->setIsSigned(this->GetIsSigned());

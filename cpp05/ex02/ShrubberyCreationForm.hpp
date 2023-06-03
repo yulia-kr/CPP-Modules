@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:31 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:32 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
@@ -14,7 +26,7 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(std::string param_target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &scf);
-		ShrubberyCreationForm operator=(const ShrubberyCreationForm &scf);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &scf);
 		~ShrubberyCreationForm();
 
 		std::string getTarget(void) const;

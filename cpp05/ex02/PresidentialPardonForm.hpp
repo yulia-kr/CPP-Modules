@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ykruhlyk <ykruhlyk@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/03 12:41:15 by ykruhlyk          #+#    #+#             */
+/*   Updated: 2023/06/03 12:41:16 by ykruhlyk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 
@@ -14,7 +26,7 @@ class PresidentialPardonForm : public AForm {
 		PresidentialPardonForm();
 		PresidentialPardonForm(std::string param_target);
 		PresidentialPardonForm(const PresidentialPardonForm &ppf);
-		PresidentialPardonForm operator=(const PresidentialPardonForm &ppf);
+		PresidentialPardonForm &operator=(const PresidentialPardonForm &ppf);
 		~PresidentialPardonForm();
 
 		std::string getTarget(void) const;
