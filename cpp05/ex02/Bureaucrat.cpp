@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1){
-	std::cout << "Bureaucrat	Default constructor was called" << std::endl;
+	std::cout << "Bureaucrat		Default constructor was called" << std::endl;
 	if(this->grade < MAX_GRADE)
 		throw GradeTooHighException();
 	else if(this->grade > MIN_GRADE)
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(1){
 }
 
 Bureaucrat::Bureaucrat(std::string param_name, int param_grade) : name(param_name), grade(param_grade) {
-	std::cout << "Bureaucrat	Constructor was called" << std::endl;
+	std::cout << "Bureaucrat		Constructor was called" << std::endl;
 	if(this->grade < MAX_GRADE)
 		throw GradeTooHighException();
 	else if(this->grade > MIN_GRADE)
@@ -29,11 +29,11 @@ Bureaucrat::Bureaucrat(std::string param_name, int param_grade) : name(param_nam
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bur) : name(bur.name), grade(bur.grade){
-	std::cout << "Bureaucrat	Copy constructor was called" << std::endl;
+	std::cout << "Bureaucrat		Copy constructor was called" << std::endl;
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat	destructor was called" << std::endl;
+	std::cout << "Bureaucrat		Destructor was called" << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &bur){

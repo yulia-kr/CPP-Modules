@@ -14,21 +14,21 @@
 
 PresidentialPardonForm::PresidentialPardonForm() 
     : AForm("PresidentialPardonForm", GRADE_TO_SIGN, GRADE_TO_EXEC), target("Presidental") {
-        std::cout << "PresidentialPardonForm    DEFAULT constructor was called" << std::endl;
+        std::cout << "PresidentialPardonForm	DEFAULT constructor was called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string param_target) 
     : AForm(param_target, GRADE_TO_SIGN, GRADE_TO_EXEC), target(param_target) {
-        std::cout << "PresidentialPardonForm    constructor was called" << std::endl;
+        std::cout << "PresidentialPardonForm	Constructor was called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &ppf) : AForm() {
     *this = ppf;
-    std::cout << "PresidentialPardonForm     COPY constructor was called" << std::endl;
+    std::cout << "PresidentialPardonForm	COPY constructor was called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-    std::cout << "PresidentialPardonForm     destructor was called" << std::endl;
+    std::cout << "PresidentialPardonForm	Destructor was called" << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &ppf) {
@@ -36,7 +36,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
         this->target = ppf.target;
         this->setIsSigned(this->GetIsSigned());
     }
-    std::cout << "PresidentialPardonForm     Assigment operator was called" << std::endl;
+    std::cout << "PresidentialPardonForm	Assigment operator was called" << std::endl;
     return *this;
 }
 

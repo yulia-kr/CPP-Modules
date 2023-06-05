@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 
 Intern::Intern() {
-	std::cout << "Intern	default constructor was called" << std::endl;
+	std::cout << "Intern			Default constructor was called" << std::endl;
 }
 
 Intern::Intern(const Intern &intern) { 
@@ -16,7 +16,7 @@ Intern &Intern::operator=(const Intern &intern) {
 }
 
 Intern::~Intern() {
-	std::cout << "Intern	destructor was called" << std::endl;
+	std::cout << "Intern			Destructor was called" << std::endl;
 }
 
 const char *Intern::NonExistingFormException::what() const throw() {
@@ -39,18 +39,18 @@ AForm *Intern::makeForm(std::string const &form_name, std::string const &form_ta
 	switch (ch_form) {
 		case Intern::SHRUB_REQUEST:
 			newForm = new ShrubberyCreationForm(form_target);
-			std::cout << "Intern creates " << forms_arr[ch_form] << std::endl;
+			std::cout << "\nINTERN CREATES " << forms_arr[ch_form] << "\n" << std::endl;
 			break;
 		case Intern::ROB_REQUEST:
 			newForm = new RobotomyRequestForm(form_target);
-			std::cout << "Intern creates " << forms_arr[ch_form] << std::endl;
+			std::cout << "\nINTERN CREATES " << forms_arr[ch_form] << "\n" << std::endl;
 			break;
 		case Intern::PR_PARDON:
 			newForm = new PresidentialPardonForm(form_target);
-			std::cout << "Intern creates " << forms_arr[ch_form] << std::endl;
+			std::cout << "\nINTERN CREATES " << forms_arr[ch_form] << "\n" << std::endl;
 			break;
 		default:
-			std::cout << "FORM " << form_name << " DOESN'T EXIST" << std::endl;
+			std::cout << "\nFORM " << form_name << " DOESN'T EXIST\n" << std::endl;
 			throw Intern::NonExistingFormException();
 			break;
 	}

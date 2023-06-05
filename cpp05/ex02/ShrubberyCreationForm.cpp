@@ -14,21 +14,21 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() 
     : AForm("ShrubberyCreationForm", GRADE_TO_SIGN, GRADE_TO_EXEC), target("Shrubbery") {
-        std::cout << "ShrubberyCreationForm    DEFAULT constructor was called" << std::endl;
+        std::cout << "ShrubberyCreationForm	DEFAULT constructor was called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string param_target) 
     : AForm(param_target, GRADE_TO_SIGN, GRADE_TO_EXEC), target(param_target) {
-        std::cout << "ShrubberyCreationForm    constructor was called" << std::endl;
+        std::cout << "ShrubberyCreationForm	Constructor was called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &scf) : AForm() {
     *this = scf;
-    std::cout << "ShrubberyCreationForm     COPY constructor was called" << std::endl;
+    std::cout << "ShrubberyCreationForm	COPY constructor was called" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-    std::cout << "ShrubberyCreationForm     destructor was called" << std::endl;
+    std::cout << "ShrubberyCreationForm	Destructor was called" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &scf) {
@@ -36,7 +36,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
         this->target = scf.target;
         this->setIsSigned(this->GetIsSigned());
     }
-    std::cout << "ShrubberyCreationForm     Assigment operator was called" << std::endl;
+    std::cout << "ShrubberyCreationForm	Assigment operator was called" << std::endl;
     return *this;
 }
 
