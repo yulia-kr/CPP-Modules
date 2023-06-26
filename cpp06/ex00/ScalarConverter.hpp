@@ -11,12 +11,13 @@
 # include <sstream>
 
 class ScalarConverter{
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &copy);
 		~ScalarConverter();
 		ScalarConverter &operator=(const ScalarConverter &rhs);
 
+	public:
 		static void convertToChar(std::string str);
 		static void convertToInt(std::string str);
 		static void convertToFloat(std::string str);

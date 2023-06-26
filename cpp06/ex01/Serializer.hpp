@@ -4,23 +4,18 @@
 # include <cstdlib>
 # include <cstdint>
 # include <iostream>
-
-typedef struct  Data
-{
-   unsigned char c;
-   uint8_t idx;
-   uint16_t info;
-} Data;
+# include "Data.hpp"
 
 class Serializer {
-    public:
+    private:
     Serializer();
     Serializer(const Serializer &copy);
 	~Serializer();
 	Serializer &operator=(const Serializer &rhs);
-
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    
+    public:
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
 };
 
 #endif

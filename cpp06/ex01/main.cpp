@@ -7,10 +7,10 @@ int main(void)
 	dataOb.idx = 0x05;
 	dataOb.info = 0xFFAD;
 
-	Serializer serializedOb;
 	
 	std::cout << "Address of the Data object: " << &dataOb << std::endl;
-	Data *ptrDataOb = serializedOb.deserialize(serializedOb.serialize(&dataOb));
+	uintptr_t pt = Serializer::serialize(&dataOb);
+	Data *ptrDataOb = Serializer::deserialize(pt);
 	std::cout << "Address of the Data object: " << ptrDataOb << std::endl;
 
 	if (&dataOb == ptrDataOb) {

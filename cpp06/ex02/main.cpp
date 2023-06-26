@@ -2,6 +2,10 @@
 
 int main(void)
 {
+
+	Base h;
+	identify(h);
+
 	Base *genBase = generate();
 	identify(genBase);
 	identify(*genBase);

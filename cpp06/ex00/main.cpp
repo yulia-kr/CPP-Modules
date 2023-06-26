@@ -7,7 +7,6 @@ int main(int argc, char **argv)
 	else if (argc < 2)
 		std::cout << "Please provide arguments" << std::endl;
 	else {
-		ScalarConverter converter;
-		converter.convert(argv[1]);
+		ScalarConverter::convert(argv[1]);
 	}
 }
