@@ -2,29 +2,24 @@
 #define SPAN_HPP
 
 #include <vector>
-#include <algorithm>
-#include <stdexcept>
 
 class Span
 {
 private:
-    std::vector<int> numbers;
     unsigned int maxSize;
+    std::vector<int> numbers;
 
 public:
-    Span();
-	Span(unsigned int size);
-	Span(const Span& other);
-	Span& operator=(const Span& other);
-	~Span();
+    Span(unsigned int size);
+    Span(const Span &other);
+    Span &operator=(const Span &other);
 
-    Span(unsigned int N);
-
-    void addNumber(int number);
+    void addNumber(int num);
     void addRange(const std::vector<int>& range);
-
-    int shortestSpan() const;
-    int longestSpan() const;
+    unsigned int shortestSpan() const;
+    unsigned int longestSpan() const;
 };
 
 #endif
+
+

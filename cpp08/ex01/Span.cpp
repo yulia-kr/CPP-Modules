@@ -1,54 +1,55 @@
 #include "Span.hpp"
 
-Span::Span(unsigned int N) : maxSize(N)
+Span::Span(unsigned int size) : maxSize(size) {}
+
+Span::Span(const Span &other) : maxSize(other.maxSize), numbers(other.numbers) {}
+
+Span &Span::operator=(const Span &other)
 {
+    if (this != &other)
+    {
+        maxSize = other.maxSize;
+        numbers = other.numbers;
+    }
+    return *this;
 }
 
-void Span::addNumber(int number)
+void Span::addNumber(int num)
 {
     if (numbers.size() >= maxSize)
-    {
         throw std::runtime_error("Span is already full");
-    }
-    numbers.push_back(number);
+    numbers.push_back(num);
 }
 
 void Span::addRange(const std::vector<int>& range)
 {
     if (numbers.size() + range.size() > maxSize)
-    {
-        throw std::runtime_error("Adding the range would exceed the Span's capacity");
-    }
+        throw std::runtime_error("Adding range exceeds the capacity of the Span");
     numbers.insert(numbers.end(), range.begin(), range.end());
 }
 
-int Span::shortestSpan() const
+unsigned int Span::shortestSpan() const
 {
-    if (numbers.size() <= 1)
-    {
-        throw std::runtime_error("Cannot find a span with fewer than 2 numbers");
-    }
+    if (numbers.size() < 2)
+        throw std::runtime_error("Not enough elements to find the shortest span");
     std::vector<int> sortedNumbers = numbers;
     std::sort(sortedNumbers.begin(), sortedNumbers.end());
-    int minSpan = sortedNumbers[1] - sortedNumbers[0];
-    for (size_t i = 2; i < sortedNumbers.size(); ++i)
+    unsigned int minSpan = static_cast<unsigned int>(sortedNumbers[1]) - static_cast<unsigned int>(sortedNumbers[0]);
+    for (size_t i = 1; i < sortedNumbers.size() - 1; ++i)
     {
-        int span = sortedNumbers[i] - sortedNumbers[i - 1];
+        unsigned int span = static_cast<unsigned int>(sortedNumbers[i + 1]) - static_cast<unsigned int>(sortedNumbers[i]);
         if (span < minSpan)
-        {
             minSpan = span;
-        }
     }
     return minSpan;
 }
 
-int Span::longestSpan() const
+unsigned int Span::longestSpan() const
 {
-    if (numbers.size() <= 1)
-    {
-        throw std::runtime_error("Cannot find a span with fewer than 2 numbers");
-    }
+    if (numbers.size() < 2)
+        throw std::runtime_error("Not enough elements to find the longest span");
     std::vector<int> sortedNumbers = numbers;
     std::sort(sortedNumbers.begin(), sortedNumbers.end());
-    return sortedNumbers.back() - sortedNumbers.front();
+    return static_cast<unsigned int>(sortedNumbers[sortedNumbers.size() - 1]) - static_cast<unsigned int>(sortedNumbers[0]);
 }
+
