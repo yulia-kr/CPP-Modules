@@ -1,30 +1,22 @@
 NAME = btc
-
-SRC = main.cpp BitcoinExchange.hpp BitcoinExchange.cpp
+SRC = main.cpp BitcoinExchange.cpp
+OBJ = $(SRC:.cpp=.o)
 
 CC = c++
-
 RM = rm -rf
-
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-all:		$(NAME)
+all: $(NAME)
 
-$(NAME):	main.o BitcoinExchange.o
-	$(CC) $(CFLAGS) -o btc main.o BitcoinExchange.o
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
 
-main.o: main.cpp BitcoinExchange.hpp
-	$(CC) $(CFLAGS) -c main.cpp
+clean:
+	$(RM) $(NAME)
 
-BitcoinExchange.o: BitcoinExchange.cpp BitcoinExchange.hpp
-	$(CC) $(CFLAGS) -c BitcoinExchange.cpp
+fclean: clean
+	$(RM) -f $(NAME)
 
+re: fclean all
 
-clean:		
-			$(RM) -f $(NAME)
-
-fclean:		clean
-
-re:			fclean all
-
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

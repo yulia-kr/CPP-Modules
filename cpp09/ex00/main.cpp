@@ -24,6 +24,8 @@ int main(int argc, char** argv) {
 
     BitcoinExchange exchange;
     std::string dataLine;
+    // Skip the header line in data.csv
+    std::getline(dataFile, dataLine);
     while (std::getline(dataFile, dataLine)) {
         std::istringstream dataIss(dataLine);
         std::string date;
@@ -44,7 +46,14 @@ int main(int argc, char** argv) {
     }
 
     std::string inputLine;
+    bool firstLine = true;
     while (std::getline(inputFile, inputLine)) {
+        // Skip the header line in input.txt
+        if (firstLine) {
+            firstLine = false;
+            continue;
+        }
+
         std::istringstream inputIss(inputLine);
         std::string dateStr, valueStr;
         if (std::getline(inputIss, dateStr, '|') && std::getline(inputIss, valueStr)) {
@@ -55,9 +64,8 @@ int main(int argc, char** argv) {
             }
 
             double value;
-            try {
-                value = std::stod(valueStr);
-            } catch (...) {
+            std::istringstream valueIss(valueStr);
+            if (!(valueIss >> value)) {
                 std::cerr << "Error: invalid input value on line " << inputLine << std::endl;
                 continue;
             }
@@ -70,19 +78,20 @@ int main(int argc, char** argv) {
             double exchangeRate = exchange.getExchangeRate(date);
             if (exchangeRate == 0.0) {
                 // Find the closest date in the data file
-                std::map<std::string, double>::const_iterator it = exchange.getExchangeRates().lower_bound(date);
-                if (it == exchange.getExchangeRates().end()) {
-                    // If the input date is greater than the last date in the data file
-                    it = std::prev(it);
-                } else if (it != exchange.getExchangeRates().begin() && it->first != date) {
-                    // If the input date is not exactly matching any date in the data file
-                    std::map<std::string, double>::const_iterator prevIt = std::prev(it);
-                    if (std::abs(std::stod(prevIt->first) - std::stod(date)) < std::abs(std::stod(it->first) - std::stod(date))) {
-                        it = prevIt;
+                std::map<double, double> dateToRate;
+                for (std::map<std::string, double>::const_iterator it = exchange.getExchangeRates().begin(); it != exchange.getExchangeRates().end(); ++it) {
+                    double dataDate = std::stod(it->first);
+                    if (dataDate < std::stod(date)) {
+                        dateToRate[std::stod(date) - dataDate] = it->second;
                     }
                 }
 
-                exchangeRate = it->second;
+                if (dateToRate.empty()) {
+                    std::cerr << "Error: no exchange rate found for date " << date << " on line " << inputLine << std::endl;
+                    continue;
+                }
+
+                exchangeRate = dateToRate.begin()->second;
             }
 
             double bitcoinValue = value * exchangeRate;
@@ -98,4 +107,9 @@ int main(int argc, char** argv) {
 
     return 0;
 }
+
+
+
+
+
 
