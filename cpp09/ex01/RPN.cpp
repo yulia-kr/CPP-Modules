@@ -10,7 +10,11 @@ int RPNCalculator::calculate(const std::string& expression) {
 
     while (iss >> token) {
         if (isdigit(token[0])) {
-            operandStack.push(std::atoi(token.c_str()));
+            int operand = std::atoi(token.c_str());
+            if (operand >= 10) {
+                throw std::runtime_error("Invalid operand: " + token + ". Operand must be less than 10.");
+            }
+            operandStack.push(operand);
         } else {
             if (operandStack.size() < 2) {
                 throw std::runtime_error("Not enough operands for the operator.");
